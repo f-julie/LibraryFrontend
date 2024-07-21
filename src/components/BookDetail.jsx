@@ -13,7 +13,7 @@ export default function BookDetail() {
 
     const getBook = async() => {
         try {
-        const result = await axios.get(`https://libapi-mfq42mv3.b4a.run/books${id}`);
+        const result = await axios.get(`https://libapi-mfq42mv3.b4a.run/books/${id}`);
         console.log("The Result: ", result);
         setBook(result.data);
 
