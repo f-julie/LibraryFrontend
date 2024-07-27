@@ -13,7 +13,7 @@ export default function BookForm() {
         const book = {title, description, author, publishedAt: published };
 
         try {
-            const result = await axios.post("https://libapi-mfq42mv3.b4a.run/books", book);
+            const result = await axios.post("https://libbackenddeploy2-ozmys7xq.b4a.run/books", book);
             console.log(result);
             setTitle('');
             setDescription('');

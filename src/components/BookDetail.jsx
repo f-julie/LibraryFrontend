@@ -13,7 +13,7 @@ export default function BookDetail() {
 
     const getBook = async() => {
         try {
-        const result = await axios.get(`https://libapi-mfq42mv3.b4a.run/books/${id}`);
+        const result = await axios.get(`https://libbackenddeploy2-ozmys7xq.b4a.run/books/${id}`);
         console.log("The Result: ", result);
         setBook(result.data);
 
@@ -21,39 +21,7 @@ export default function BookDetail() {
             console.error(err);
         }
     }
-    const bookData = [
-        {
-            id: 0,
-            title: "My First Book",
-            author: "Agatha Christie",
-            description: "Description of my book",
-            publishedAt: "2000-06-02"
 
-        },
-        {
-            id: 1,
-            title: "My Second Book",
-            author: "Agatha Christie",
-            description: "Description of my book",
-            publishedAt: "2000-06-02"
-        },
-        {
-            id: 2,
-            title: "My Third Book",
-            author: "Agatha Christie",
-            description: "Description of my book",
-            publishedAt: "2000-06-02"
-        },
-        {
-            id: 3,
-            title: "My Fourth Book",
-            author: "Agatha Christie",
-            description: "Description of my book",
-            publishedAt: "2000-06-02"
-        }
-    ];
-
-    //const book1 = bookData[id];
     return (
         <div className="flex w-full justify-center text-2xl">   
             <a href="http://www.google.com" target="BLANK">
