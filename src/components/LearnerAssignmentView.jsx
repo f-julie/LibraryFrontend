@@ -1,55 +1,63 @@
 import { data } from "autoprefixer";
 import axios from "axios";
+import { useState } from "react";
+import Dropdown from "./Dropdown";
 
-const mockData = [
-  {
-    status: "Pending Submission",
-    number: 1,
-    githubUrl: "https://github.com/f-julie",
-    branch: "Branch A",
-  },
-  {
-    status: "Submitted",
-    number: 2,
-    githubUrl: "https://github.com/f-julie",
-    branch: "Branch B",
-  },
-  {
-    status: "In Review",
-    number: 3,
-    githubUrl: "https://github.com/f-julie",
-    branch: "Branch C",
-  },
-  {
-    status: "Needs Update",
-    number: 4,
-    githubUrl: "https://github.com/f-julie",
-    branch: "Branch D",
-  },
-];
+export const LearnerAssignmentView = () => {
+  const [assignment, setAssignment] = useState({
+    githubUrl: "",
+    branch: "",
+  });
 
-export const Assignments = () => {
-  const getUserAssignments = async () => {
-    const getAssignmentsUrl = "http://localhost:8080/api/learnerAssignmentView";
-    const res = await axios.get(getAssignmentsUrl, credentials, {
-      headers: { "Access-Control-Allow-Origin": "http://localhost:5173/" },
-    });
+  const options = ["Option 1", "Option 2", "Option 3"];
+
+  const handleSubmit = () => {};
+
+  const handleDashboard = () => {};
+
+  const updateGithubUrl = (e) => {
+    e.preventDefault();
+    setAssignment({ ...assignment, githubUrl: e.target.value });
+  };
+
+  const updateBranch = (e) => {
+    e.preventDefault();
+    setBranch({ ...assignment, branch: e.target.value });
   };
 
   return (
-    <div>
-      {mockData.map((data) => {
-        return (
-          <div className="self-center mb-4 border p-5 text-gray-400 rounded-md">
-            <span className="text-2xl font-serif text-gray-500"></span>
-            <div>{`Assignment: ${data.number}`}</div>
-            <div>{`status: ${data.status}`}</div>
-            <div>{`githubUrl: ${data.githubUrl}`}</div>
-            <div>{`branch: ${data.branch}`}</div>
-            <span className="text-2xl font-serif text-gray-500"></span>
-          </div>
-        );
-      })}
+    <div className="self-center mb-4 border p-5 text-gray-400 rounded-md">
+      <span className="text-2xl font-serif text-gray-500"></span>
+      <div>Learner Assignment View</div>
+      <div className="border-2 flex justify-center">Assignment #</div>
+      <div>Select Assignment</div>
+      <Dropdown options={options} />
+      <div>Github Url</div>
+      <input
+        type="text"
+        placeholder="Enter Github url here"
+        onChange={updateGithubUrl}
+        className="border-2 text-black"
+        value={assignment.githubUrl}
+      />
+      <div>Branch</div>
+      <input
+        type="text"
+        placeholder="Enter branch here"
+        onChange={updateBranch}
+        className="border-2 text-black"
+        value={assignment.branch}
+      />
+      <div className="flex gap-5">
+        <button onClick={handleSubmit} className="border-2">
+          Submit
+        </button>
+
+        <button onClick={handleDashboard} className="border-2">
+          Back to Dashboard
+        </button>
+      </div>
+      <span className="text-2xl font-serif text-gray-500"></span>
     </div>
   );
 };
