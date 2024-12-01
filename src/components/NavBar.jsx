@@ -90,8 +90,8 @@ export default function NavBar() {
           Home
         </Link>
         {isLoggedIn && (
-          <Link className="hover:text-black" to="/assignments">
-            Assignments
+          <Link className="hover:text-black" to="/learnerDashboard">
+            Learner Dashboard
           </Link>
         )}
       </nav>
