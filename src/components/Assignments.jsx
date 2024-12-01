@@ -40,7 +40,7 @@ export const Assignments = () => {
     <div>
       {mockData.map((data) => {
         return (
-          <div className="self-center mb-4 border p-5 text-gray-400 rounded-md">
+          <div className="self-center mb-4 border p-5 text-black-400 rounded-md">
             <span className="text-2xl font-serif text-gray-500"></span>
             <div>{`Assignment: ${data.number}`}</div>
             <div>{`status: ${data.status}`}</div>
