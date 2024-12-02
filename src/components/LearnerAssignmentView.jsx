@@ -28,7 +28,6 @@ export const LearnerAssignmentView = () => {
   return (
     <div className="self-center mb-4 border p-5 text-gray-400 rounded-md">
       <span className="text-2xl font-serif text-gray-500"></span>
-      <div>Learner Assignment View</div>
       <div className="border-2 flex justify-center">Assignment #</div>
       <div>Select Assignment</div>
       <Dropdown options={options} />
